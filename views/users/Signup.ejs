@@ -1,0 +1,35 @@
+<%- include("../layouts/boilerplate") %>
+<link rel="stylesheet" href="/CSS/style.css">
+<body>
+    <div class="row mb-3">
+        <div class="col-8 offset-2">
+            <h1>Signup On WonderLust</h1>
+            <form action="/signup" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                    <div class="valid-feedback">
+                        Look's Good
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control"  required>
+                    <div class="invalid-feedback">
+                        Enter email
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Enter password
+                    </div>
+                </div>
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+    

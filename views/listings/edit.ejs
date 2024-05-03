@@ -1,0 +1,63 @@
+<%- include("../layouts/boilerplate") %>
+<body>
+    <div class="row mb-3">
+        <div class="col-8 offset-2">    
+            <h1>Edit the Deatils:</h1>
+            <form action="/listings/<%= data.id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">title</label>
+                    <input type="text" name="listing[title]" class="form-control" value="<%= data.title%>" required>
+                    <div class="valid-feedback">
+                        Title Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <textarea name="listing[description]" class="form-control"  cols="30" rows="4" required><%= data.description%> </textarea>
+                    <div class="invalid-feedback">
+                        Please write a short description
+                    </div>
+                </div>
+
+                <div class="mb-3"> original Image <br>
+                    <img src="<%= originalImage%>" alt="image">
+                 </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">image</label>
+                    <input type="file" name="listing[image]" class="form-control" >
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">price</label>
+                    <input name="listing[price]" class="form-control" value="<%= data.price%>" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid number
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">location</label>
+                    <input type="text" name="listing[location]" class="form-control" value="<%= data.location%>" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid location name
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="country" class="form-label">country</label>
+                    <input type="text" name="listing[country]" class="form-control" value="<%= data.country%>" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid country name
+                    </div>
+                </div>
+
+                <button class="btn submit-btn  mb-3">submit</button>
+            </form>
+        </div>
+    </div>
+    <%- include("../includes/footer.ejs") %>
+    <script src="/js/script.js"></script>
+</body>
