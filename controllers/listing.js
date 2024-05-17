@@ -52,7 +52,7 @@ module.exports.showListing = async (req, res) => {
 }
 
 
-
+    
 module.exports.renderEditForm = async (req, res) => {
     let { id } = req.params;
     let data = await Listing.findById(id);
