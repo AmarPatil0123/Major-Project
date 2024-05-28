@@ -36,7 +36,6 @@ router.get("/:id",wrapAsync(listingController.showListing));
 
 //update route
 
-router.get("/:id/edit",isLogged,wrapAsync(listingController.renderEditForm))
 
 router.put("/:id",isLogged,isOwner, upload.single('listing[image]'),wrapAsync(listingController.updateListing))
 
@@ -45,6 +44,8 @@ router.put("/:id",isLogged,isOwner, upload.single('listing[image]'),wrapAsync(li
 
 router.delete("/:id",isLogged,isOwner,wrapAsync(listingController.destroyListing));
 
+//update 
+router.get("/:id/edit",isLogged,wrapAsync(listingController.renderEditForm))
 
 
 module.exports=router;
